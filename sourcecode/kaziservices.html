@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>Kazi Laundry| Services</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Kazi</span> Laundry Services</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="kaziindex.html">Home</a></li>
+            <li><a href="kaziabout.html">About</a></li>
+            <li class="current"><a href="kaziservices.html">Services</a></li>
+			<li><a href="logi.html">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="newsletter">
+      <div class="container">
+        <h1>Update your location</h1>
+        <form>
+          <input type="email" placeholder="Enter location..">
+          <button type="submit" class="button_1">Update</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <article id="main-col">
+          <h1 class="page-title">Services</h1>
+          <ul id="services">
+            <li>
+              <h3>Laundry of Clothes</h3>
+              <p>In case one would like to get their clothes laundered one should specify the amount of clothes they have so as to compare with the given prices.</p>
+						  <p>Pricing: kshs 400-600 per bucket</p>
+						  <img src="./img/nguo.png">
+            </li>
+            <li>
+              <h3>Laundry of Shoes</h3>
+              <p>The shoe prices vary acoording to the type of shoe and the ease of washing the shoes</p>
+						  <p>Pricing: Sneakers/Rubbers - Kshs 100 per shoe</p>
+						   <p>Pricing: Leather - Kshs 50 per shoe</p>
+						    <p>Pricing: Sandals/Open shoes - Kshs 50 per shoe</p>
+							 <img src="./img/shoe.png">
+            </li>
+            <li>
+              <h3>Laundry of Heavy Clothes</h3>
+              <p>Heavy clothes may include beddings such as duvets and towels</p>
+						  <p>Pricing:Kshs 800-1200 per clothing</p>
+						  <img src="./img/duvet.png">
+            </li>
+			<li>
+              <h3>Ironing</h3>
+              <p>The price of ironing ranges from the number of clothes.</p>
+						  <p>Pricing:Kshs 200-500 per clothing</p>
+						   <img src="./img/iron.png">
+            </li>
+          </ul>
+        </article>
+
+        <aside id="sidebar" >
+          <div class="dark">
+            <h3>Indicate time</h3>
+            <form class="quote" action="location.php" method="post">
+  						<div>
+  							<label>Name</label><br>
+  							<input type="text" placeholder="Name" name = "name">
+  						</div>
+  						<div>
+  							<label>Location</label><br>
+							<select name="location">
+						<option>Makadara</option>
+						<option>Kamukunji</option>
+						<option>Starehe</option>
+						<option>Langata</option>
+						<option>Dagoretti</option>
+						<option>Westlands</option>
+						<option>Embakasi</option>
+					</select>
+  						</div>
+  						<div>
+  							<label>Time (24h clock system)</label><br>
+                <select name="time">
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+          </select>
+  						</div>
+  						<button class="button_1" type="submit" name="send">Link with worker</button>
+					</form>
+          </div>
+        </aside>
+		<aside id="sidebar">
+          <div class="dark">
+            <h3>Write a review</h3>
+            <form class="quote">
+  						<div>
+  							<label>Name</label><br>
+  							<input type="text" placeholder="User's Name">
+  						</div>
+  						<div>
+  							<label>ID</label><br>
+  							<input type="number" placeholder="ID">
+  						</div>
+  						<div>
+  							<label>Message</label><br>
+  							<textarea placeholder="Message"></textarea>
+  						</div>
+  						<button class="button_1" type="submit">Send</button>
+					</form>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <p>Acme Web Deisgn, Copyright &copy; 2017</p>
+    </footer>
+  </body>
+</html>

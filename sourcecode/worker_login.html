@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kazi Log In</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<?php
+	function displayStepID()
+	{?>
+		<form method="post">
+			<h1>This is Step1</h1>
+			<input type="hidden" name="password" value= "<?php setvalue("password")?>">
+			Enter ID<br>
+			<input type="number" name="ID" value="<?php setvalue("ID")?>"><br>
+			<input class="btn btn-success mt-3" type="submit" name="createAccount" value="createAccount">
+			<input type="submit" name="StepPassword" value="StepPassword">
+		</form>
+	<?php  }
+
+	function displayStepPassword()
+	{?>
+		<form method="post">
+			<h1>This is Step2</h1>
+			<input type="hidden" name="ID" value="<?php setvalue("ID")?>">
+			Enter Last Name<br>
+			<input type="password" name="password" value= "<?php setvalue("password")?>">
+			<input type="submit" name="StepID" value="StepID">
+			<input class="btn btn-success mt-3" type="submit" name="Login" value="Login">
+		</form>
+	<?php  }?>
+
+</body>
+</html>
+
+<?php 
+require_once('dbconnect.php');
+session_start();
+
+if(isset($_POST["createAccount"])){
+	header("location:multistep_registration.php");
+}
+else if(isset($_POST["StepPassword"])){
+	displayStepPassword();
+}
+else if(isset($_POST["StepID"])){
+	displayStepID();
+}
+else if(isset($_POST['Login']))
+{
+   if(empty($_POST['ID']) || empty($_POST['password']))
+    {
+        header("location:worker_login.php?Empty= Please Fill in the Blanks");
+	}
+    else 
+    {
+        $query="SELECT * FROM worker WHERE id='".$_POST['ID']."' AND password='".$_POST['password']."'";
+	    $result=mysqli_query($conn,$query);
+
+        if( mysqli_fetch_assoc($result))
+            {
+              header("location:laundry.php");
+            }
+		else
+            {
+              header("location:worker_login.php?Invalid= Please Enter Correct User Name and Password ");
+            }
+    }
+}
+    else
+    {
+        echo 'It is not working wow';
+    }
+
+function setValue($fieldName)
+{
+	if(isset($_POST[$fieldName])){
+		echo $_POST[$fieldName];
+	}
+}
+?>
+
